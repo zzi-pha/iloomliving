@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>일룸리빙</title>
+    <link rel="stylesheet" href="css/sub1.css" />
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      $(document).ready(function () {
+        $('.gnb>li').mouseenter(function () {
+          $('.bg').stop().animate({ height: '350px' }, 100);
+        });
+
+        $('.gnb>li').mouseleave(function () {
+          $('.bg').stop().animate({ height: '100px' }, 100);
+        });
+
+        $(".menu>ul>li").click(function(){
+          let aa = $(this).index();
+          $(".menu>ul>li").removeClass("on");
+          $(".menu>ul>li").eq(aa).addClass("on");
+        });
+
+        // 이미지 슬라이더 설정
+        let $imageSlider = $('#imageSlider');
+        let currentIndex = 0;
+
+        function changeImage() {
+          $imageSlider.find('li').fadeOut(2000);
+          currentIndex = (currentIndex + 1) % $imageSlider.find('li').length;
+          $imageSlider.find('li').eq(currentIndex).fadeIn(2000);
+        }
+
+        setInterval(changeImage, 4000);
+
+        $(window).scroll(function () {
+          triggerAnimation();
+        });
+
+        // 초기 페이지 로딩 시 애니메이션 트리거
+        triggerAnimation();
+
+        $('.sub a').click(function (e) {
+          e.preventDefault();
+          var category = $(this).data('category');
+          showSection(category);
+        });
+      });
+
+      function triggerAnimation() {
+        const sectionTop = $('#section').offset().top;
+        const saleTop = $('#sale').offset().top;
+        const footerTop = $('#footer').offset().top;
+        const windowHeight = $(window).height();
+        const scrollTop = $(window).scrollTop();
+
+        if (sectionTop < scrollTop + windowHeight) {
+          $('#section').addClass('active');
+        }
+
+        if (saleTop < scrollTop + windowHeight) {
+          $('#sale').addClass('active');
+        }
+
+        if (footerTop < scrollTop + windowHeight) {
+          $('#footer').addClass('active');
+        }
+      }
+// ----------------------------헤더메뉴에서 바로가기---------------------------------
+      function showSection(section) {
+        // 모든 섹션 숨기기
+        $('#section .sofa, #section .closet, #section .table, #section .chair, #section .bed').hide();
+
+        // 클릭한 메뉴에 해당하는 섹션 보이기
+        $('#section .' + section).show();
+
+        // 현재 메뉴 활성화 스타일 지정
+        $('.menu li').removeClass('active');
+        $('.menu li:contains(' + section.toUpperCase() + ')').addClass('active');
+      }
+    </script>
+  </head>
+  <body>
+      <div id="header">
+          <div class="bg"> <!--헤더영역 호버 시 배경-->
+              <div class="nav_wrap">
+                  <div class="menu_icon">
+                      <p class="t_burgor"></p>
+                      <p class="m_burgor"></p>
+                      <p class="b_burgor"></p>
+                  </div>
+                  <h1 class="logo"><a href="main.html"></a></h1> 
+                  <ul class="gnb clear">
+                      <li>
+                          <a href="sub1.html">가구</a>
+                          <ul class="sub">
+                            <li><a href="sub1.html" data-category="sofa">소파</a></li>
+                            <li><a href="sub1.html" data-category="closet">서랍장</a></li>
+                            <li><a href="sub1.html" data-category="table">테이블</a></li>
+                            <li><a href="sub1.html" data-category="chair">체어</a></li>
+                            <li><a href="sub1.html" data-category="bed">침대</a></li>
+                          </ul>
+                      </li>
+  
+                      <li>
+                          <a href="sub2.html">뉴스</a>
+                          <ul class="sub">
+                              <li onclick="location.href='sub2.html'"><a href="sub2.html">뉴스</a></li>
+                          </ul>
+                      </li>
+  
+                      <li>
+                          <a href="sub3.html">이벤트</a>
+                          <ul class="sub">
+                              <li onclick="location.href='sub3.html'"><a href="sub3.html">이벤트</a></li>
+                          </ul>
+                      </li>
+  
+                      <li>
+                          <a href="sub4.html">고객지원</a>
+                          <ul class="sub">
+                              <li onclick="location.href='sub4.html'"><a href="sub4.html">고객지원안내</a></li>
+                              <li><a href="#">공지사항</a></li>
+                              <li><a href="#">FAQ</a></li>
+                          </ul>
+                      </li>
+                  </ul>
+  
+                  <ul class="util clear">
+                      <li><a href="sub5.html">주문제작</a></li>
+                      <li><a href="sub6.html">LOGIN</a></li>
+                  </ul>
+              </div> <!--nav_wrap-->
+          </div> <!--bg-->
+
+          <div class="modal_wrap">
+            <div class="modal clear">
+                <div class="left">ALL MENU</div>
+                <div class="right">
+                    <div class="close_btn">
+                        <span class="material-symbols-outlined">
+                            close
+                            </span>
+                    </div>
+                    <ul class="menu clear">
+                        <li>
+                            <h2>가구</h2>
+                            <ul class="sub">
+                                <li><a href="sub1.html">소파</a></li>
+                                <li><a href="sub1.html">서랍장</a></li>
+                                <li><a href="sub1.html">테이블</a></li>
+                                <li><a href="sub1.html">체어</a></li>
+                                <li><a href="sub1.html">침대</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <h2>뉴스</h2>
+                            <ul class="sub">
+                                <li><a href="sub2.html">뉴스</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <h2>이벤트</h2>
+                            <ul class="sub">
+                                <li><a href="sub3.html">이벤트</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <h2>고객지원</h2>
+                            <ul class="sub">
+                                <li><a href="sub4.html">고객지원안내</a></li>
+                                <li><a href="#">공지사항</a></li>
+                                <li><a href="#">FAQ</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+      </div> <!--header-->
+      <!-- 헤더영역 -->
+    <!--header-->
+    <!-- <ul id="imageSlider">
+      <li>
+        <a href="#"><img src="img/main.png" alt="메인" /></a>
+      </li>
+      <li>
+        <a href="#"><img src="img/main4.jpg" alt="메인4" /></a>
+      </li>
+      <li>
+        <a href="#"><img src="img/main5.jpg" alt="메인5" /></a>
+      </li>
+      <li>
+        <a href="#"><img src="img/main6.jpg" alt="메인6" /></a>
+      </li>
+    </ul> -->
+    <ul id="imageSlider">
+      <li><img src="img/furniture_page/main10.jpg" alt="Slide 1" /></li>
+      <li><img src="img/furniture_page/main2.jpg" alt="Slide 2" /></li>
+      <li><img src="img/furniture_page/main3.jpg" alt="Slide 3" /></li>
+      <li><img src="img/furniture_page/main11.jpg   " alt="Slide 4" /></li>
+    </ul>
+    <div id="section">
+      <div class="menu">
+        <ul>
+          <li class="on" onclick="showSection('sofa')">SOFA</li>
+          <li onclick="showSection('closet')">CLOSET</li>
+          <li onclick="showSection('table')">TABLE</li>
+          <li onclick="showSection('chair')">CHAIR</li>
+          <li onclick="showSection('bed')">BED</li>
+        </ul>
+      </div>
+      <ul class="sub">
+        <li>인기순</li>
+        <li>가격순</li>
+        <li>신상품</li>
+      </ul>
+      <div class="sofa">
+        <div class="one">
+          <ul class="product-list">
+            <li>
+              <img src="img/furniture_page/쇼파 스노즈.jpg" alt="스노즈" />
+              <div class="s_txt">
+                <h3>슬림한 디자인과 최상의 착좌감까지</h3>
+                <p>포근하고 안락함이 매력적인 스노즈를 만나보세요</p>
+              </div>
+            </li>
+            <li class="tit">스노즈</li>
+            <li class="txt">3.5인 (패브릭)</li>
+            <li class="sum">2,290,000원</li>
+            <li class="star"><span>&#9733;</span>4.9</li>
+          </ul>
+          <ul class="product-list">
+            <li>
+              <img src="img/SOFA/around.jpg" alt="어라운드" />
+              <div class="s_txt">
+                <h3>깔끔한 자유로운 모듈 소파</h3>
+                <p>자유로운 배치와 편안한 착석감의 어라운드를 만나보세요</p>
+              </div>
+            </li>
+            </li>
+            <li class="tit">어라운드</li>
+            <li class="txt">컴팩트 코너 좌(멀티탭,패브릭)</li>
+            <li class="sum">2,390,000원</li>
+            <li class="star"><span>&#9733;</span>4.8</li>
+          </ul>
+          <ul class="product-list">
+            <li><img src="img/SOFA/luova.jpg" alt="루오바" />
+              <div class="s_txt">
+                <h3>내 스타일로 공간 완성</h3>
+                <p>내가 원하는 스타일로 공간을 완성해주는 루오바를 만나보세요</p>
+              </div>
+            </li>
+            <li class="tit">루오바</li>
+            <li class="txt">코너형 천연가죽 모듈소파</li>
+            <li class="sum">2,800,000원</li>
+            <li class="star"><span>&#9733;</span>4.2</li>
+          </ul>
+        </div>
+        <div class="two">
+          <ul class="product-list">
+            <li><img src="img/SOFA/스노우.jpg" alt="스노우" />
+              <div class="s_txt">
+                <h3>스노우 1인 소파(가죽)</h3>
+                <p>미드백 소파로 디자인과 편안함 모두 만족시켜줍니다</p>
+              </div>
+            </li>
+            <li class="tit">스노우</li>
+            <li class="txt">1인 소파(가죽)</li>
+            <li class="sum">990,000원</li>
+            <li class="star"><span>&#9733;</span>4.9</li>
+          </ul>
+          <ul class="product-list">
+            <li><img src="img/SOFA/vancouver2.jpg" alt="벤쿠버" />
+              <div class="s_txt">
+                <h3>심플하고 세련된 감성 인테리어</h3>
+                <p>미니멀한 거실 인테리어를 완성해주는 밴쿠버</p>
+              </div>
+            </li>
+            <li class="tit">벤쿠버</li>
+            <li class="txt">3인(패브릭)_온라인몰 전용</li>
+            <li class="sum">1,290,000원</li>
+            <li class="star"><span>&#9733;</span>4.8</li>
+          </ul>
+          <ul class="product-list">
+            <li><img src="img/furniture_page/쇼파5.jpg" alt="볼케S" />
+              <div class="s_txt">
+                <h3>리클라이너 소파S(S가죽,전동)</h3>
+                <p>구름위에 앉아있는 듯한 편안함을 컴팩트하게 담은 소파</p>
+              </div>
+            </li>
+            <li class="tit">볼케S</li>
+            <li class="txt">볼케S (S가죽,전동)</li>
+            <li class="sum">1,790,000원</li>
+            <li class="star"><span>&#9733;</span>4.8</li>
+          </ul>
+        </div>
+      </div>
+      <!-- ---------------------------CLOSET---------------------- -->
+      <div class="closet" style="display: none">
+        <div class="one">
+          <ul class="product-list">
+            <li><img src="img/CLOSET/frame.jpg" alt="프레임" />
+              <div class="s_txt">
+                <h3>클래식한 감성을 가진 세련된 디테일</h3>
+                <p>취향에 맞게, 라이프스타일에 맞게</p>
+                <h5>해당 제품은 오프라인 매장 전용 제품입니다</h5>
+              </div>
+            </li>
+            </li>
+            <li class="tit">프레임</li>
+            <li class="txt">프레임 도어</li>
+            <li class="star"><span>&#9733;</span>4.9</li>
+          </ul>
+          <ul class="product-list">
+            <li><img src="img/CLOSET/grip.jpg" alt="그립" />
+              <div class="s_txt">
+                <h3>베이직한 디자인,자연스러운 컬러</h3>
+                <p>취향에 맞게, 라이프스타일에 맞게</p>
+                <h5>해당 제품은 오프라인 매장 전용 제품입니다</h5>
+              </div>
+            </li>
+            <li class="tit">그립</li>
+            <li class="txt">그립도어</li>
+            <li class="star"><span>&#9733;</span>4.8</li>
+          </ul>
+          <ul class="product-list">
+            <li><img src="img/CLOSET/miel.jpg" alt="미엘갤러리" />
+              <div class="s_txt">
+                <h3>로맨틱하고 특색있는 캘러리장 디자인</h3>
+                <p>취향에 맞게, 라이프스타일에 맞게</p>
+                <h5>해당 제품은 오프라인 매장 전용 제품입니다</h5>
+              </div>
+            </li>
+            <li class="tit">미엘갤러리</li>
+            <li class="txt">미엘갤러리 도어</li>
+            <li class="star"><span>&#9733;</span>4.2</li>
+          </ul>
+        </div>
+        <div class="two">
+          <ul class="product-list">
+            <li><img src="img/CLOSET/ridi.jpg" alt="리디" />
+              <div class="s_txt">
+                <h3>미니멀하고 감각적인 핸들리스 디자인</h3>
+                <p>취향에 맞게, 라이프스타일에 맞게</p>
+                <h5>해당 제품은 오프라인 매장 전용 제품입니다</h5>
+              </div>
+            </li>
+            <li class="tit">리디</li>
+            <li class="txt">리디도어</li>
+            <li class="star"><span>&#9733;</span>4.9</li>
+          </ul>
+          <ul class="product-list">
+            <li><img src="img/CLOSET/solid.jpg" alt="솔리드" />
+              <div class="s_txt">
+                <h3>공간의 완성도를 높여주는 기능과 디자인</h3>
+                <p>취향에 맞게, 라이프스타일에 맞게</p>
+                <h5>해당 제품은 오프라인 매장 전용 제품입니다</h5>
+              </div>
+            </li>
+            <li class="tit">솔리드</li>
+            <li class="txt">솔리드 슬라이딩도어</li>
+            <li class="star"><span>&#9733;</span>4.8</li>
+          </ul>
+          <ul class="product-list">
+            <li><img src="img/CLOSET/solid2.jpg" alt="솔리드" />
+              <div class="s_txt">
+                <h3>공간의 완성도를 높여주는 기능과 디자인</h3>
+                <p>취향에 맞게, 라이프스타일에 맞게</p>
+                <h5>해당 제품은 오프라인 매장 전용 제품입니다</h5>
+              </div>
+            </li>
+            <li class="tit">솔리드</li>
+            <li class="txt">솔리드 스톤 슬라이딩 도어</li>
+            <li class="star"><span>&#9733;</span>4.8</li>
+          </ul>
+        </div>
+      </div>
+      <!-- --------------------------TABLE------------------------- -->
+      <div class="table" style="display: none">
+        <div class="one">
+          <ul class="product-list">
+            <li><img src="img/TABLE/como.jpg" alt="코모" />
+              <div class="s_txt">
+                <h3>거실 인테리어를 완성해주는 코모</h3>
+                <p>취향과 라이프스타일에 따라 인테리어를 완성해주는 코모</p>
+              </div>
+            </li>
+            <li class="tit">코모</li>
+            <li class="txt">코모 사이드테이블(USB)</li>
+            <li class="sum">189,000원</li>
+            <li class="star"><span>&#9733;</span>4.9</li>
+          </ul>
+          <ul class="product-list">
+            <li><img src="img/TABLE/delta.jpg" alt="델타듀얼" />
+              <div class="s_txt">
+                <h3>다재다능한 멀티 소파테이블</h3>
+                <p>원하는 작업 스타일에 따라 스마트하게 사용가능한,델타듀얼</p>
+              </div>
+            </li>
+            <li class="tit">델타듀얼</li>
+            <li class="txt">1200폭 델타듀얼 소파테이블(D540)</li>
+            <li class="sum">399,000원</li>
+            <li class="star"><span>&#9733;</span>4.8</li>
+          </ul>
+          <ul class="product-list">
+            <li><img src="img/TABLE/largo.jpg" alt="라르고" />
+              <div class="s_txt">
+              <h3>벨벳같은 부드러운 광택의 사틴유리</h3>
+              <p>고급스러운 디자인 편리한 사용성 라르고와 함께 휴식을 즐겨보세요</p>
+            </div>
+            </li>
+            <li class="tit">라르고</li>
+            <li class="txt">1200폭 리프트업 테이블</li>
+            <li class="sum">629,000원</li>
+            <li class="star"><span>&#9733;</span>4.2</li>
+          </ul>
+        </div>
+        <div class="two">
+          <ul class="product-list">
+            <li><img src="img/TABLE/캐스터네츠.jpg" alt="캐스터네츠" />
+              <div class="s_txt">
+                <h3>해먹 소파테이블</h3>
+                <p>세련된 투톤 컬러로 어디에나 어울리는 소파 테이블로 집사와 냥이 모두 만족하는 디자인  </p>
+              </div>
+            </li>
+            <li class="tit">캐스터네츠</li>
+            <li class="txt">해먹 소파테이블(온라인 전용)</li>
+            <li class="sum">199,000원</li>
+            <li class="star"><span>&#9733;</span>4.9</li>
+          </ul>
+          <ul class="product-list">
+            <li><img src="img/TABLE/패밀리.jpg" alt="시에토스" />
+              <div class="s_txt">
+                <h3>패밀리테이블 1600폭</h3>
+                <p>타원형 상판의 베이직한 디자인과 견고한 원목 다리가 돋보이는 시에토스 식탁입니다</p>
+              </div>
+            </li>
+            <li class="tit">시에토스</li>
+            <li class="txt">패밀리테이블 1600폭(온라인 전용)</li>
+            <li class="sum">499,000원</li>
+            <li class="star"><span>&#9733;</span>4.8</li>
+          </ul>
+          <ul class="product-list">
+            <li><img src="img/TABLE/푸들.jpg" alt="푸들" />
+              <div class="s_txt">
+                <h3>푸들 소파테이블 500폭(H)</h3>
+                <p>러블리한 디자인과 책을 거치할 수 있는 사이드테이블로 인테리어 포인트가 되어주는 소파테이블 입니다</p>
+              </div>
+            </li>
+            <li class="tit">푸들</li>
+            <li class="txt">소파테이블 500폭(H)</li>
+            <li class="sum">169,000원</li>
+            <li class="star"><span>&#9733;</span>4.8</li>
+          </ul>
+        </div>
+      </div>
+      <!-- --------------------------CHAIR--------------------------- -->
+      <div class="chair" style="display: none">
+        <div class="one">
+          <ul class="product-list">
+            <li><img src="img/CHAIR/듄.jpg" alt="듄" />
+              <div class="s_txt">
+                <h3>선의 아름다움을 담은 유려한 디자인</h3>
+                <p>따뜻한 원목 소재가 전하는 감성과 감각적인 디자인이 조화로운 듄 원목 의자</p>
+              </div>
+            </li>
+            <li class="tit">듄</li>
+            <li class="txt">원목 의자(2EA)</li>
+            <li class="sum">235,000원</li>
+            <li class="star"><span>&#9733;</span>4.9</li>
+          </ul>
+          <ul class="product-list">
+            <li><img src="img/CHAIR/리암.jpg" alt="리암" />
+              <div class="s_txt">
+                <h3>리암 원목의자(2ea)</h3>
+                <p>클래식한 디자인의 견고한 원목의자
+                  식탁과 매치해 고급스러운 다이닝 공간을 완성해 보세요</p>
+              </div>
+            </li>
+            <li class="tit">리암</li>
+            <li class="txt">원목 의자(2ea)</li>
+            <li class="sum">349,000원</li>
+            <li class="star"><span>&#9733;</span>4.8</li>
+          </ul>
+          <ul class="product-list">
+            <li><img src="img/CHAIR/비비.jpg" alt="비비" />
+              <div class="s_txt">
+                <h3>비비 의자 (인조가죽)</h3>
+                <p>컨템포러리 감성의 세련된 스티치와 하나의 다리가 등좌판을 지지하는 유니크한 스타일</p>
+              </div>
+            </li>
+            <li class="tit">비비</li>
+            <li class="txt">의자(인조가죽)</li>
+            <li class="sum">209,000원</li>
+            <li class="star"><span>&#9733;</span>4.2</li>
+          </ul>
+        </div>
+        <div class="two">
+          <ul class="product-list">
+            <li><img src="img/CHAIR/세타플러스.jpg" alt="세타플러스" />
+              <div class="s_txt">
+                <h3>세타플러스 의자 (인조가죽)</h3>
+                <p>다이닝룸부터 캐주얼한 서재까지, 다양한 공간에서 젊고 밝은 분위기를 연출할 수 있습니다</p>
+              </div>
+            </li>
+            <li class="tit">세타플러스</li>
+            <li class="txt">의자(인조가죽)</li>
+            <li class="sum">195,000원</li>
+            <li class="star"><span>&#9733;</span>4.9</li>
+          </ul>
+          <ul class="product-list">
+            <li><img src="img/CHAIR/세타플러스2.jpg" alt="세타플러스" />
+              <div class="s_txt">
+                <h3>세타플러스 벤치 (인조가죽)</h3>
+                <p>테이블과 매치해 다이닝룸, 홈라이브러리 등에서 사용할 수 있습니다</p>
+              </div>
+            </li>
+            <li class="tit">세타플러스</li>
+            <li class="txt">벤치 1100폭</li>
+            <li class="sum">279,000원</li>
+            <li class="star"><span>&#9733;</span>4.8</li>
+          </ul>
+          <ul class="product-list">
+            <li><img src="img/CHAIR/콘.jpg" alt="콘" />
+              <div class="s_txt">
+                <h3>콘 의자 (인조가죽)</h3>
+                <p>모던한 디자인으로 어느공간에나 잘 어울립니다</p>
+              </div>
+            </li>
+            <li class="tit">콘</li>
+            <li class="txt">의자(인조가죽)</li>
+            <li class="sum">169,000원</li>
+            <li class="star"><span>&#9733;</span>4.8</li>
+          </ul>
+        </div>
+      </div>
+      <!-- --------------------------BED--------------------------- -->
+      <div class="bed" style="display: none">
+        <div class="one">
+          <ul class="product-list">
+            <li><img src="img/BED/다나.jpg" alt="다나" />
+              <div class="s_txt">
+                <h3>모션베드 캐주얼(라텍스,책상형)</h3>
+                <p>책 읽기, 노트북 작업 등 침대 위에서도 다양한 활동이 가능한 모션베드 캐주얼(책상형)입니다</p>
+              </div>
+            </li>
+            <li class="tit">다나</li>
+            <li class="txt">모션베드 캐주얼(라텍스,책상형)</li>
+            <li class="sum">2,090,000원</li>
+            <li class="star"><span>&#9733;</span>4.9</li>
+          </ul>
+          <ul class="product-list">
+            <li><img src="img/BED/아르지안.jpg" alt="아르지안" />
+              <div class="s_txt">
+                <h3>아르지안 베드프레임 1100폭(모션용)</h3>
+                <p>사용자의 수면 습관이나 라이프스타일에 맞춰 다양한 자세를 지원해주는 아르지안 베드프레임입니다</p>
+              </div>
+            </li>
+            <li class="tit">아르지안</li>
+            <li class="txt">아르지안 베드프레임 1100폭(모션용)</li>
+            <li class="sum">1,572,000원</li>
+            <li class="star"><span>&#9733;</span>4.8</li>
+          </ul>
+          <ul class="product-list">
+            <li><img src="img/BED/업.jpg" alt="업" />
+              <div class="s_txt">
+                <h3>사용성을 높인 디자인,컴팩트한 사이즈</h3>
+                <p>어느 공간에나 부담 없이 업 테이블을 두고 활용해 보세요</p>
+              </div>
+            </li>
+            <li class="tit">업</li>
+            <li class="txt">업 리프트업테이블 600폭(라운드상판)</li>
+            <li class="sum">249,000원</li>
+            <li class="star"><span>&#9733;</span>4.2</li>
+          </ul>
+        </div>
+        <div class="two">
+          <ul class="product-list">
+            <li><img src="img/BED/쿠시노 코지.jpg" alt="쿠시노 코지" />
+              <div class="s_txt">
+                <h3>저상형 침대 범퍼가드형(SS,아쿠아클린)</h3>
+                <p>우리 가족만의 포근한 침실을 완성해보세요</p>
+              </div>
+            </li>
+            <li class="tit">쿠시노 코지</li>
+            <li class="txt">쿠시노 코지 저상형침대SS(아쿠아클린)-범퍼형</li>
+            <li class="sum">1,208,000원</li>
+            <li class="star"><span>&#9733;</span>4.9</li>
+          </ul>
+          <ul class="product-list">
+            <li><img src="img/BED/쿠시노.jpg" alt="쿠시노" />
+              <div class="s_txt">
+                <h3>저상형 저상형 패밀리침대 (Q+S)</h3>
+                <p>우리 가족만의 포근한 침실을 완성해보세요</p>
+              </div>
+            </li>
+            <li class="tit">쿠시노</li>
+            <li class="txt">저상형 패밀리 침대 Q+S</li>
+            <li class="sum">1,096,000원</li>
+            <li class="star"><span>&#9733;</span>4.8</li>
+          </ul>
+          <ul class="product-list">
+            <li><img src="img/BED/헤이즐.jpg" alt="헤이즐" />
+              <div class="s_txt">
+                <h3>나만의 여유로운 휴양지 분위기를 연출하는 헤이즐</h3>
+                <p>한적한 여행지의 코지한 감성을 선물하는 헤이즐을 만나보세요</p>
+              </div>
+            </li>
+            <li class="tit">헤이즐</li>
+            <li class="txt">침대(SS)</li>
+            <li class="sum">599,000원</li>
+            <li class="star"><span>&#9733;</span>4.8</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="sale">
+      <img src="img/furniture_page/footer.jpg" alt="sale" />
+      <p>Sale up to 50%</p>
+    </div>
+    <div class="review-event">
+      <h2>리뷰 이벤트 참여</h2>
+      <p>당신의 소중한 리뷰로 참여해보세요. 매월 선정되는 우수 리뷰어에게 특별한 혜택이 제공됩니다!</p>
+      <button class="participate-btn">이벤트 참여하기</button>
+    </div>
+    <!-- ------------- -->
+    <div id="footer">
+      <div class="f_left">
+        <h1 class="b_logo"></h1>
+        <ul class="f_txt clear">
+          <li><a href="#">이용약관</a></li>
+          <li><a href="#">개인정보처리방침</a></li>
+          <li><a href="#">위치기반서비스 이용약관</a></li>
+          <li><a href="#">이메일무단수집거부</a></li>
+          <li><a href="#">법적고지</a></li>
+        </ul>
+
+        <p>
+          서울시 송파구 오금로 311 (오금동 45-1) (주)일룸리빙룸 대표이사 김성훈
+          <span class="txt_line"></span>
+          개인정보보호책임자 김성훈 <br />
+          사업자등록번호: 215-86-93600
+          <span class="txt_line"></span>
+          통신판매업 신고 : 2009-서울송파-0069호
+        </p>
+        <p>ⓒ Copyright 2023. iloomliving. All rights reserved.</p>
+      </div>
+
+      <div class="f_right">
+        <p>고객센터 전화문의</p>
+        <p>1577-5670</p>
+        <p>9:30 ~ 17:30 (점심시간 12:30 ~ 13:30)</p>
+        <p>9:30 ~ 12:30</p>
+        <div class="chat"></div>
+        <div class="as"></div>
+      </div>
+    </div>
+  </body>
+</html>

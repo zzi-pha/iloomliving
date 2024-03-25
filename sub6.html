@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>일룸 리빙</title>
+    <link rel="icon" href="img\icon.png">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+    <link rel="stylesheet" href="css/sub6.css" />
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="js/main.js"></script>
+    <form id="login-form" action="#"></form>
+    <script>
+      $(document).ready(function () {
+        $('.gnb>li').mouseenter(function () {
+          $('.bg').stop().animate({ height: '350px' }, 100);
+        });
+
+        $('.gnb>li').mouseleave(function () {
+          $('.bg').stop().animate({ height: '100px' }, 100);
+        });
+
+        // ---------------------------------
+        ('use strict');
+        const loginId = document.getElementById('LOGIN_ID');
+        const loginPw = document.getElementById('LOGIN_PW');
+        const loginBtn = document.getElementById('LOGIN_BTN');
+
+        function color() {
+          if (loginId.value.length > 0 && loginPw.value.length >= 5) {
+            loginBtn.disabled = false;
+          } else {
+            loginBtn.disabled = true;
+          }
+        }
+
+        function login() {
+          const username = 'iloom';
+          const password = '123123';
+
+          if (loginId.value === username && loginPw.value === password) {
+            alert('로그인 성공!');
+            window.location.href = 'main.html';
+          } else {
+            alert('로그인 실패. 아이디와 비밀번호를 다시 확인하세요.');
+          }
+        }
+
+        loginId.addEventListener('input', color);
+        loginPw.addEventListener('input', color);
+        loginBtn.addEventListener('click', login);
+      });
+
+      // ----------------------헤더메뉴에서 바로가기----------------------------
+      function showSection(section) {
+        // 모든 섹션 숨기기
+        $('#section .sofa, #section .closet, #section .table, #section .chair, #section .bed').hide();
+
+        // 클릭한 메뉴에 해당하는 섹션 보이기
+        $('#section .' + section).show();
+
+        // 현재 메뉴 활성화 스타일 지정
+        $('.menu li').removeClass('active');
+        $('.menu li:contains(' + section.toUpperCase() + ')').addClass('active');
+      }
+    </script>
+  </head>
+  <body>
+    <div id="header">
+      <div class="bg">
+        <!--헤더영역 호버 시 배경-->
+        <div class="nav_wrap">
+          <div class="menu_icon">
+            <p class="t_burgor"></p>
+            <p class="m_burgor"></p>
+            <p class="b_burgor"></p>
+          </div>
+          <h1 class="logo"><a href="main.html"></a></h1>
+          <ul class="gnb clear">
+            <li>
+              <a href="sub1.html">가구</a>
+              <ul class="sub">
+                <li><a href="sub1.html">소파</a></li>
+                <li><a href="sub1.html">서랍장</a></li>
+                <li><a href="sub1.html">테이블</a></li>
+                <li><a href="sub1.html">체어</a></li>
+                <li><a href="sub1.html">침대</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="sub2.html">뉴스</a>
+              <ul class="sub">
+                <li><a href="sub2.html">뉴스</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="sub3.html">이벤트</a>
+              <ul class="sub">
+                <li><a href="sub3.html">이벤트</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="sub4.html">고객지원</a>
+              <ul class="sub">
+                <li><a href="sub4.html">고객지원안내</a></li>
+                <li><a href="#">공지사항</a></li>
+                <li><a href="#">FAQ</a></li>
+              </ul>
+            </li>
+          </ul>
+
+          <ul class="util clear">
+            <li><a href="sub5.html">주문제작</a></li>
+            <li><a href="sub6.html">LOGIN</a></li>
+          </ul>
+        </div>
+        <!--nav_wrap-->
+      </div>
+      <!--bg-->
+
+      <div class="modal_wrap">
+        <div class="modal clear">
+          <div class="left">ALL MENU</div>
+          <div class="right">
+            <div class="close_btn">
+              <span class="material-symbols-outlined"> close </span>
+            </div>
+            <ul class="menu clear">
+              <li>
+                <h2>가구</h2>
+                <ul class="sub">
+                  <li><a href="sub1.html">소파</a></li>
+                  <li><a href="sub1.html">서랍장</a></li>
+                  <li><a href="sub1.html">테이블</a></li>
+                  <li><a href="sub1.html">체어</a></li>
+                  <li><a href="sub1.html">침대</a></li>
+                </ul>
+              </li>
+
+              <li>
+                <h2>뉴스</h2>
+                <ul class="sub">
+                  <li><a href="sub2.html">뉴스</a></li>
+                </ul>
+              </li>
+
+              <li>
+                <h2>이벤트</h2>
+                <ul class="sub">
+                  <li><a href="sub3.html">이벤트</a></li>
+                </ul>
+              </li>
+
+              <li>
+                <h2>고객지원</h2>
+                <ul class="sub">
+                  <li><a href="sub4.html">고객지원안내</a></li>
+                  <li><a href="#">공지사항</a></li>
+                  <li><a href="#">FAQ</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--header-->
+    <!-- 헤더영역 -->
+
+    <!-- section -->
+    <section>
+      <div class="login_wrapper">
+<<<<<<< HEAD
+        <div class="login_logo"><a href="main.html"><img src="img\header\logo.png"></a></div>
+=======
+        <div class="login_logo"><a href="main.html"><img src="../img/header/logo.png"></a></div>
+>>>>>>> 7794fd3fedec4fc24cea9d4495e7cbdb101226bf
+        <form class="login_form">
+          <input id="LOGIN_ID" class="login_text" type="text" name="id" placeholder="&nbsp;&nbsp;아이디" />
+          <input id="LOGIN_PW" class="login_text" type="password" name="id" placeholder="&nbsp;&nbsp;비밀번호" />
+          <div class="login_options">
+            <input type="radio" /> <a class="login_bottom" href="#">아이디저장</a>
+            <a class="login_bottom2" href="#">회원가입 | 아이디, 비밀번호찾기</a>
+          </div>
+          <button id="LOGIN_BTN" class="login_btn" type="button" disabled>로그인</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- 푸터 -->
+    <div id="footer">
+      <div class="f_left">
+        <h1 class="b_logo"></h1>
+        <ul class="f_txt clear">
+          <li><a href="#">이용약관</a></li>
+          <li><a href="#">개인정보처리방침</a></li>
+          <li><a href="#">위치기반서비스 이용약관</a></li>
+          <li><a href="#">이메일무단수집거부</a></li>
+          <li><a href="#">법적고지</a></li>
+        </ul>
+
+        <p>
+          서울시 송파구 오금로 311 (오금동 45-1) (주)일룸리빙룸 대표이사 김성훈
+          <span class="txt_line"></span>
+          개인정보보호책임자 김성훈 <br />
+          사업자등록번호: 215-86-93600
+          <span class="txt_line"></span>
+          통신판매업 신고 : 2009-서울송파-0069호
+        </p>
+
+        <p>ⓒ Copyright 2023. iloomliving. All rights reserved.</p>
+      </div>
+      <!--footer left-->
+
+      <div class="f_right">
+        <p>고객센터 전화문의</p>
+        <p>1577-5670</p>
+        <p>9:30 ~ 17:30 (점심시간 12:30 ~ 13:30)</p>
+        <p>9:30 ~ 12:30</p>
+        <div class="chat"></div>
+        <div class="as"></div>
+      </div>
+    </div>
+    <!--footer right-->
+  </body>
+</html>

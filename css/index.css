@@ -1,0 +1,354 @@
+@charset "UTF-8";
+
+a{text-decoration: none; color: #CB0000;}
+html,body{width: 100%;height: 100%;overflow: hidden;}
+
+/* ---------------------------------------------------------first */
+
+#first{
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  /* display: none; */
+}
+#first .ima_group_1{
+  width: 3840px; height: 320px;
+  /* border: 1px solid rebeccapurple; */
+  /* box-sizing: border-box; */
+  animation: left-slide 2s 1.5s 1 forwards,gone 1s 7s 1 forwards;
+  
+}
+#first .ima_group_1>div{
+  width: 500px; height: 300px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  float: left;
+  margin-right: 220px;
+  margin-top: 10px;
+  transform-origin: right;
+  animation: shrink 2s 4.5s 1 forwards;
+}
+#first .ima_group_1 div:nth-child(1){
+  background-image: url(../img/landing_page/4-1.jpeg);
+  margin-left: 350px;
+}
+#first .ima_group_1 div:nth-child(2){
+  background-image: url(../img/landing_page/4-2.jpg);
+}
+#first .ima_group_1 div:nth-child(3){
+  background-image: url(../img/landing_page/4-3.jpg);
+  margin-left: 400px;
+}
+#first .ima_group_1 div:nth-child(4){
+  background-image: url(../img/landing_page/4-4.jpg);
+}
+
+
+#first .ima_group_2{
+  width: 3840px; height: 320px;
+  /* border: 1px solid seagreen; */
+  /* box-sizing: border-box; */
+  margin-left: -1838px;
+  animation: right-slide 2s 1.5s 1 forwards,
+  /* cent 1s 4.5s 1 forwards; */
+  gone 1s 7s 1 forwards;
+  
+}
+#first .ima_group_2>div{
+  width: 500px; height: 300px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  float: left;
+  margin-right: 220px;
+  margin-top: 10px;
+}
+#first .ima_group_2 div:nth-child(1){
+  background-image: url(../img/landing_page/4-5.jpg);
+  margin-left: 350px;
+  animation: shrink 2s 4.5s 1 forwards, fadeout1 2s 6s 1 forwards;
+}
+#first .ima_group_2 div:nth-child(2){
+  background-image: url(../img/landing_page/4-6.jpg);
+  animation:shrink 2s 4.5s 1 forwards, fadeout2 2s 6s 1 forwards;
+}
+#first .ima_group_2 div:nth-child(3){
+  background-image: url(../img/landing_page/4-7.jpg);
+  margin-left: 400px;
+  animation:shrink 2s 4.5s 1 forwards, fadeout3 2s 6s 1 forwards;
+}
+#first .ima_group_2 div:nth-child(4){
+  background-image: url(../img/landing_page/4-8.jpg);
+  animation:shrink 2s 4.5s 1 forwards, fadeout4 2s 6s 1 forwards;
+}
+
+#first .ima_group_3{
+  width: 3840px; height: 320px;
+  /* border: 1px solid darkmagenta; */
+  /* box-sizing: border-box; */
+  animation: left-slide 2s 1.5s 1 forwards, gone 1s 7s 1 forwards;
+  
+}
+#first .ima_group_3>div{
+  width: 500px; height: 300px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  float: left;
+  margin-right: 220px;
+  margin-top: 10px;
+  animation: shrink 1.5s 4.5s 1 forwards;
+}
+#first .ima_group_3 div:nth-child(1){
+  background-image: url(../img/landing_page/4-9.jpg);
+  margin-left: 350px;
+}
+#first .ima_group_3 div:nth-child(2){
+  background-image: url(../img/landing_page/4-10.jpg);
+}
+#first .ima_group_3 div:nth-child(3){
+  background-image: url(../img/landing_page/4-11.jpg);
+  margin-left: 400px;
+}
+#first .ima_group_3 div:nth-child(4){
+  background-image: url(../img/landing_page/4-12.jpg);
+}
+
+
+/* ------------------------------------------------------------second */
+
+#second{
+  width: 100%;height: 100%;
+  position: absolute;
+  left: 0; top: 0;
+  /* display: none; */
+  text-transform: uppercase;
+}
+#second h1 a{
+  font-size: 72px;
+  font-weight: 600;
+  color:#CB0000;
+  position: absolute;
+  left: 50%; top: 40%;
+  margin-left: -92px;
+  text-transform: lowercase;
+  font-family: 'GmarketSans';
+  opacity: 0;
+  animation: fadein 1.5s 7.5s 1 forwards, moving 1s 9.5s 1 forwards;
+  animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+#second .two_option{
+  width: 100%;height: 100%;
+  margin-top: 120px;
+  opacity: 0;
+  animation: bgon 20s 10.8s 1 forwards;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1)
+}
+#second .two_option>div{
+  text-align: center;
+}
+#second .two_option .living{
+  width: 49.97%; height: 100%;
+  float: left;
+  background-color: rgba(0, 0, 0, 0.300);
+}
+#second .two_option .line{
+  width: 1px; height: 0px;
+  position: absolute;
+  left: 50%; top: 120px;
+  background-color: rgba(0, 0, 0, 0.300);
+  animation: lin 8s 14s 1 forwards;
+  animation-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+}
+#second .two_option .origin{
+  width: 49.98%; height: 100%;
+  float: left;
+  background-color: rgba(0, 0, 0, 0.300);
+  text-transform: lowercase;
+}
+#second .two_option>div>h2{
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+#second .two_option>div>h2>a{
+  font-size: 36px;
+  /* margin-top: 100px; */
+  /* line-height: 400px; */
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 75%, #ffffff 75%);
+  font-family: 'nanum';
+  box-shadow: inset 0 0 0 0 #CB0000;
+  color: #CB0000;
+  /* margin: 0 -.25rem; */
+  padding: 0 .25rem;
+  transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+#second .two_option>.living>h2>a:hover{
+  box-shadow: inset 305px 0 0 0 #CB0000;
+  color: white;
+}
+#second .two_option>.origin>h2>a:hover{
+  box-shadow: inset 200px 0 0 0 #CB0000;
+  color: white;
+}
+#second .two_option>div>p{
+  font-size: 24px;
+  color: white;
+  font-weight: 600;
+  font-family: 'nanum';
+}
+#second .two_option .origin>.tx1{
+  margin-top: -50px;
+}
+#second .two_option .origin>.tx2{
+  margin-top: 15px;
+}
+#second .two_option>div>.btn{
+  position: relative; 
+  width: 300px; height: 100px;
+  margin: 100px auto; border: 1px solid #ccc;
+  background-color: white;
+  border-radius: 5px;
+  line-height: 100px;
+}
+#second .two_option>div>.btn span{position: absolute; background: #CB0000;}
+#second .two_option>div>.btn span:nth-child(1) 
+{left: 0; top: 0; width: 0; height: 5px; transition: width 0.1s;}
+#second .two_option>div>.btn span:nth-child(2) 
+{right: 0; top: 0; width: 5px; height: 0; transition: height 0.1s linear 0.1s;}
+#second .two_option>div>.btn span:nth-child(3) 
+{right: 0; bottom: 0; width: 0; height: 5px; transition: width 0.1s linear 0.2s;}
+#second .two_option>div>.btn span:nth-child(4)
+{left: 0; bottom: 0; width: 5px; height: 0; transition: height 0.1s linear 0.3s;}
+#second .two_option>div>.btn>a{
+  display: block;
+  font-size: 22px;
+  font-family: 'nanum';
+}
+
+/* ----------------------------------------------------------------------hover */
+#second .two_option>div>.btn:hover span:nth-child(1) {width: 100%;}
+#second .two_option>div>.btn:hover span:nth-child(2) {height: 100%;}
+#second .two_option>div>.btn:hover span:nth-child(3) {width: 100%;}
+#second .two_option>div>.btn:hover span:nth-child(4) {height: 100%;}
+
+
+/* ------------------------------------------------------------------animation */
+
+@keyframes left-slide{
+  0%{transform: translateX(0);}
+  100%{transform: translateX(-47.9%);}
+}
+@keyframes right-slide{
+  0%{transform: translateX(0);}
+  100%{transform: translateX(47.9%);}
+}
+@keyframes shrink{
+  0%{width: 500px;}
+  100%{width: 30px;}
+}
+@keyframes cent{
+  0%{
+    transform: translateX(47.9%);
+  }
+  100%{
+    transform: translateX(53.8%);
+  }
+}
+
+@keyframes fadeout1{
+  0%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(40%);
+    opacity: 0;
+  }
+}
+@keyframes fadeout2{
+  0%{
+    transform: translateY(0);
+  
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(20%);
+    
+    opacity: 0;
+  }
+}
+@keyframes fadeout3{
+  0%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(5%);
+    opacity: 0;
+  }
+}
+@keyframes fadeout4{
+  0%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(30%);
+    opacity: 0;
+  }
+}
+@keyframes fadein{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+@keyframes moving{
+  0%{
+    transform:translateY(0); 
+    font-size: 72px;
+  }
+  100%{
+    transform: translateY(-340px);
+    font-size: 48px;
+    margin-left: -62px;
+  }
+}
+@keyframes gone{
+  from{
+    display: block;
+  }
+  to{
+    display: none;
+  }
+}
+@keyframes lin{
+  0%{
+    height: 0%;
+  }
+  100%{
+    background-color: #ccc;
+    height: 100%;
+  }
+}
+@keyframes bgon{
+  0%{
+    background-image: url(../img/landing_page/2-1photoshop.jpg);
+    
+    background-position-y: -100px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    opacity: 0;
+  }
+  100%{
+    background-image: url(../img/landing_page/2-1photoshop.jpg);
+    background-size: 110%;
+    background-position-y: -150px;
+    background-repeat: no-repeat;
+    opacity: 1;
+  }
+}

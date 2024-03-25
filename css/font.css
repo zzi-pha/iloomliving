@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+/* 지마켓 폰트 */
+@font-face {
+    font-family: 'GmarketSans';
+    src: url(../font/GmarketSansLight.otf) format('woff');
+    font-style: normal;
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'GmarketSans';
+    src: url(../font/GmarketSansMedium.otf) format('woff');
+    font-style: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'GmarketSans';
+    src: url(../font/GmarketSansBold.otf) format('woff');
+    font-style: normal;
+    font-weight: 600;
+}
+
+/* 나눔스퀘어 폰트 */
+@font-face {
+    font-family: 'nanum';
+    src: url(../font/NanumSquareL.otf) format('woff');
+    font-style: normal;
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'nanum';
+    src: url(../font/NanumSquareR.otf) format('woff');
+    font-style: normal;
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'nanum';
+    src: url(../font/NanumSquareB.otf) format('woff');
+    font-style: normal;
+    font-weight: 600;
+}
+
+@font-face {
+	font-family: 'SCRIPTBL';
+	src: local('SCRIPTBL'), url('../font/SCRIPTBL.woff') format('woff');
+}
+/* use this class to attach this font to any element i.e. <p class="fontsforweb_fontid_12234">Text with this font applied</p> */
+.fontsforweb_fontid_12234 {
+	font-family: 'SCRIPTBL' !important;
+}
+
+/* Font downloaded from FontsForWeb.com */

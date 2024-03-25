@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>일룸 리빙 : 뉴스</title>
+  <link rel="icon" href="img\icon.png">
+  <link rel="stylesheet" href="css/font.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="css/sub2.css">
+  <script src="jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/main.js"></script>
+  <script>
+    $(document).ready(function(){
+    $(".gnb>li").mouseenter(function(){
+        $(".bg").stop().animate({"height":"350px"},100);
+    });
+
+    $(".gnb>li").mouseleave(function(){
+        $(".bg").stop().animate({"height":"100px"},100);
+    });
+});
+  </script>
+</head>
+<body>
+    <div id="header">
+        <div class="bg"> <!--헤더영역 호버 시 배경-->
+            <div class="nav_wrap">
+                <div class="menu_icon">
+                    <p class="t_burgor"></p>
+                    <p class="m_burgor"></p>
+                    <p class="b_burgor"></p>
+                </div>
+                <h1 class="logo"><a href="main.html"></a></h1> 
+                <ul class="gnb clear">
+                    <li>
+                        <a href="sub1.html">가구</a>
+                        <ul class="sub">
+                            <li><a href="sub1.html">소파</a></li>
+                            <li><a href="sub1.html">서랍장</a></li>
+                            <li><a href="sub1.html">테이블</a></li>
+                            <li><a href="sub1.html">체어</a></li>
+                            <li><a href="sub1.html">침대</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="sub2.html">뉴스</a>
+                        <ul class="sub">
+                            <li onclick="location.href='sub2.html'"><a href="sub2.html">뉴스</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="sub3.html">이벤트</a>
+                        <ul class="sub">
+                            <li onclick="location.href='sub3.html'"><a href="sub3.html">이벤트</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="sub4.html">고객지원</a>
+                        <ul class="sub">
+                            <li onclick="location.href='sub4.html'"><a href="sub4.html">고객지원안내</a></li>
+                            <li><a href="#">고객지원안내</a></li>
+                            <li><a href="#">공지사항</a></li>
+                </ul>
+
+                <ul class="util clear">
+                    <li><a href="sub5.html">주문제작</a></li>
+                    <li><a href="sub6.html">LOGIN</a></li>
+                </ul>
+            </div> <!--nav_wrap-->
+        </div> <!--bg-->
+
+        <div class="modal_wrap">
+            <div class="modal clear">
+                <div class="left">ALL MENU</div>
+                <div class="right">
+                    <div class="close_btn">
+                        <span class="material-symbols-outlined">
+                            close
+                            </span>
+                    </div>
+                    <ul class="menu clear">
+                        <li>
+                            <h2>가구</h2>
+                            <ul class="sub">
+                                <li><a href="sub1.html">소파</a></li>
+                                <li><a href="sub1.html">서랍장</a></li>
+                                <li><a href="sub1.html">테이블</a></li>
+                                <li><a href="sub1.html">체어</a></li>
+                                <li><a href="sub1.html">침대</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <h2>뉴스</h2>
+                            <ul class="sub">
+                                <li><a href="sub2.html">뉴스</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <h2>이벤트</h2>
+                            <ul class="sub">
+                                <li><a href="sub3.html">이벤트</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <h2>고객지원</h2>
+                            <ul class="sub">
+                                <li><a href="sub4.html">고객지원안내</a></li>
+                                <li><a href="#">공지사항</a></li>
+                                <li><a href="#">FAQ</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div> <!--header-->
+    <!-- 헤더영역 -->
+  <div id="section">
+    <div class="banner">
+        <video src="img/news_page/[일룸] 하나의 소파, 다양한 라이프 (Full ver.).mp4" autoplay muted width="100%"></video>
+    </div>
+    <div class="contents">
+      <h2>NEWS</h2>
+      <p>일룸의 새로운 소식을 만나보세요.</p>
+      <div class="line"></div>
+      <ul class="con0 clear">
+        <li>
+            <a href="#">
+                <div class="ima ima1"></div>
+                <div class="ttxxtt">
+                    <h3>일룸과 함께한 <span class="half_high">귀염둥이</span> 모음.zip</h3>
+                    <h4>반려동물과 함께한 후기 모음</h4>
+                    <h5>요즘에 부쩍 후기에 귀여운 털복숭이 친구들의 지분이 높아졌습니다.<br>에디터의 사심 100%로 가득채워진 귀염둥이들과 함께한 일룸가구!</h5>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <div class="ima ima2"></div>
+                <div class="ttxxtt">
+                    <h3>더 다채롭게, <span class="half_high">소파</span>의 재발견</h3>
+                    <h4>인테리어 고수들의 모듈소파 활용법</h4>
+                    <h5>누구나 쉽게 따라할 수 있는 재미있는 소파 배치 아이디어가 담긴 소파 집중 탐구 생활!</h5>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <div class="ima ima3"></div>
+                <div class="ttxxtt">
+                    <h3>엄마아빠와 아이, 모두가 행복한 <span class="half_high">거실</span></h3>
+                    <h4>모두가 꿈꾸는 거실</h4>
+                    <h5>단란한 가족의 휴식시간을 위해 엄마아빠는 안심할 수 있고, <br>아이는 마음껏 즐거울 수 있는 거실아이디어를 소개합니다.</h5>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <div class="ima ima4"></div>
+                <div class="ttxxtt">
+                    <h3>일룸 가구디자이너들의 <span class="half_high">1인 라이프</span></h3>
+                    <h4>일룸 디자이너 방 둘러보기</h4>
+                    <h5>설레는 마음으로 1인 라이프를 준비하고 계신 분들을 위해 일룸 홈가구 연구소에서<br> 일하고 있는 디자이너의 집을 들여다보았습니다.</h5>
+                </div>
+            </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div id="footer">
+    <div class="f_left">
+        <h1 class="b_logo"></h1>
+        <ul class="f_txt clear">
+            <li><a href="#">이용약관</a></li>
+            <li><a href="#">개인정보처리방침</a></li>
+            <li><a href="#">위치기반서비스 이용약관</a></li>
+            <li><a href="#">이메일무단수집거부</a></li>
+            <li><a href="#">법적고지</a></li>
+        </ul>
+
+        <p>서울시 송파구 오금로 311 (오금동 45-1) (주)일룸리빙룸 대표이사 김성훈
+            <span class="txt_line"></span>
+            개인정보보호책임자 김성훈 <br>
+            사업자등록번호: 215-86-93600
+            <span class="txt_line"></span>
+            통신판매업 신고 : 2009-서울송파-0069호
+        </p>
+        <p>ⓒ Copyright 2023. iloomliving. All rights reserved.</p>
+    </div>
+
+    <div class="f_right">
+        <p>고객센터 전화문의</p>
+        <p>1577-5670</p>
+        <p>9:30 ~ 17:30 (점심시간 12:30 ~ 13:30)</p>
+        <p>9:30 ~ 12:30</p>
+        <div class="chat"></div>
+        <div class="as"></div>
+    </div>
+</div>
+</body>
+</html>

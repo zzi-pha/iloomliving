@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+
+* {margin: 0; padding: 0;}
+body {font-family: 'nanum';}
+ul {list-style: none;}
+a {text-decoration: none; color: #000; cursor:url('../img/cursor-a.png'),pointer;}
+img {border: 0; vertical-align: top;}
+.clear::after {content: ""; display: block; clear: both;}
+
+/* 드래그, 커서 css */
+::selection{background-color: #CB0000;color: #fff;}
+html,body{cursor:url('../img/cursor-auto.png'),auto;}
+a{cursor:url('../img/cursor-a.png'),pointer;}  
+
+
+/* 구글 아이콘 */
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+    vertical-align: middle;
+    margin-left: 30px;
+    transition: all 0.5s;
+}

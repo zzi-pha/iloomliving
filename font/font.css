@@ -1,0 +1,10 @@
+@font-face {
+	font-family: 'SCRIPTBL';
+	src: local('SCRIPTBL'), url('./SCRIPTBL.woff') format('woff');
+}
+/* use this class to attach this font to any element i.e. <p class="fontsforweb_fontid_12234">Text with this font applied</p> */
+.fontsforweb_fontid_12234 {
+	font-family: 'SCRIPTBL' !important;
+}
+
+/* Font downloaded from FontsForWeb.com */
